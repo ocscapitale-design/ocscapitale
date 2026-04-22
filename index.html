@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>OCS Capital | تداول آلي بالذكاء الاصطناعي</title>
-    <!-- Google Fonts: Cairo for elegant Arabic -->
+    <!-- Google Fonts: Cairo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -55,7 +55,6 @@
             gap: 12px;
         }
 
-        /* شعار المؤسسة كصورة */
         .logo-img {
             width: 52px;
             height: 52px;
@@ -96,7 +95,7 @@
             margin-left: 6px;
         }
 
-        /* Hero CTA & description */
+        /* Hero */
         .hero {
             display: flex;
             flex-direction: column;
@@ -147,7 +146,6 @@
             font-weight: 500;
         }
 
-        /* CTA Button الرئيسي */
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -162,9 +160,7 @@
             text-decoration: none;
             box-shadow: 0 20px 30px -8px rgba(10, 44, 124, 0.4);
             transition: all 0.2s ease;
-            border: none;
             margin-bottom: 15px;
-            letter-spacing: -0.3px;
         }
 
         .cta-button i {
@@ -184,11 +180,7 @@
             margin-bottom: 25px;
         }
 
-        .cta-sub i {
-            color: #1dab3a;
-        }
-
-        /* مزايا وأيقونات */
+        /* مزايا */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -236,7 +228,7 @@
             font-size: 15px;
         }
 
-        /* قسم الاستبيان + زر الحجز */
+        /* قسم الاستبيان */
         .booking-section {
             background: linear-gradient(102deg, #ffffff 0%, #f3f9ff 100%);
             border-radius: 40px;
@@ -294,11 +286,6 @@
             padding: 8px 0;
         }
 
-        .form-link-text i {
-            color: #0f6e3f;
-            margin-left: 8px;
-        }
-
         .reserve-btn-large {
             background: #0a2c7c;
             color: white;
@@ -316,52 +303,65 @@
             border: 1px solid #6289e0;
         }
 
-        .reserve-btn-large i {
-            font-size: 24px;
-        }
-
         .reserve-btn-large:hover {
             background: #1e4393;
             box-shadow: 0 14px 22px -10px #0a2c7c;
         }
 
-        /* قسم معلومات التواصل */
+        /* لوحة التواصل - تم تعديل المسافات بشكل كبير */
         .contact-info-panel {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
+            align-items: stretch;
+            justify-content: space-around;
             background: #0b1d3b;
-            padding: 22px 30px;
-            border-radius: 50px;
+            padding: 28px 24px;
+            border-radius: 60px;
             margin: 30px 0 16px;
             color: white;
+            gap: 24px 16px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
             font-size: 18px;
             font-weight: 600;
+            flex: 1 1 220px;
+            min-width: 220px;
+            background: rgba(255,255,255,0.03);
+            padding: 8px 16px 8px 8px;
+            border-radius: 50px;
+            transition: background 0.2s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.08);
         }
 
         .contact-item i {
             font-size: 28px;
             background: #1e3b6e;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 18px;
             color: #ffd966;
+            flex-shrink: 0;
+        }
+
+        .contact-item div {
+            line-height: 1.4;
         }
 
         .contact-item a {
             color: white;
             text-decoration: none;
             border-bottom: 1px dotted #7f9fdf;
+            font-size: 1.1em;
         }
 
         .contact-item a:hover {
@@ -374,7 +374,7 @@
             unicode-bidi: embed;
         }
 
-        /* نص الإفصاح / رسوم */
+        /* نص الرسوم */
         .fee-note {
             text-align: center;
             margin: 20px 0 10px;
@@ -401,7 +401,7 @@
             padding: 8px 4px;
         }
 
-        /* responsive */
+        /* Responsive */
         @media (max-width: 700px) {
             .container {
                 padding: 22px 16px 16px;
@@ -414,12 +414,10 @@
                 font-size: 20px;
                 padding: 16px 28px;
                 width: 100%;
-                justify-content: center;
             }
             .form-preview {
                 flex-direction: column;
                 background: transparent;
-                border-radius: 28px;
                 padding: 8px;
                 gap: 18px;
             }
@@ -430,9 +428,13 @@
             }
             .contact-info-panel {
                 flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-                border-radius: 32px;
+                gap: 16px;
+                border-radius: 40px;
+                padding: 24px 20px;
+            }
+            .contact-item {
+                min-width: auto;
+                padding: 8px 12px;
             }
             .brand-section {
                 flex-direction: column;
@@ -448,9 +450,17 @@
             .feature-card {
                 padding: 18px 10px;
             }
+            .contact-item {
+                font-size: 16px;
+                gap: 12px;
+            }
+            .contact-item i {
+                width: 46px;
+                height: 46px;
+                font-size: 24px;
+            }
         }
 
-        /* utility */
         i {
             margin-left: 4px;
         }
@@ -459,13 +469,11 @@
 <body>
 <div class="container">
     
-    <!-- الهيدر واسم المؤسسة مع الشعار -->
+    <!-- الهيدر مع الشعار -->
     <div class="brand-section">
         <div class="logo-area">
-            <!-- شعار OCS Capital -->
             <img src="https://raw.githubusercontent.com/ocscapitale-design/ocscapitale/refs/heads/main/1776884621819.jpg" 
-                 alt="OCS Capital Logo" 
-                 class="logo-img">
+                 alt="OCS Capital Logo" class="logo-img">
             <div class="logo-text">
                 <h1>OCS Capital</h1>
                 <span>الوسيط الذكي للتداول الآلي</span>
@@ -477,7 +485,7 @@
         </div>
     </div>
 
-    <!-- القسم الرئيسي مع CTA -->
+    <!-- القسم الرئيسي -->
     <div class="hero">
         <div class="pill-badge">
             <i class="fas fa-robot"></i> بوتات ذكاء اصطناعي حصرية · نسبة من الأرباح فقط
@@ -491,7 +499,6 @@
             أنت تتداول ونحن نشاركك نسبة بسيطة <strong>من الأرباح فقط</strong> – لا رسوم خفية.
         </div>
         
-        <!-- زر الحجز الرئيسي (رابط الاستبيان) -->
         <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" class="cta-button">
             <i class="fas fa-calendar-check"></i> احجز استشارتك الآن
             <i class="fas fa-arrow-left" style="font-size: 22px;"></i>
@@ -501,7 +508,7 @@
         </div>
     </div>
 
-    <!-- مميزات رئيسية -->
+    <!-- المميزات -->
     <div class="features-grid">
         <div class="feature-card">
             <div class="feature-icon"><i class="fas fa-brain"></i></div>
@@ -525,7 +532,7 @@
         </div>
     </div>
 
-    <!-- قسم الاستبيان + زر الحجز -->
+    <!-- استبيان وحجز -->
     <div class="booking-section">
         <div class="booking-header">
             <i class="fas fa-clipboard-list"></i>
@@ -536,7 +543,6 @@
             بعد إرساله سيتواصل معك فريق OCS Capital خلال ساعة عمل.
         </div>
         
-        <!-- صندوق عرض الرابط مع زر الحجز البارز -->
         <div class="form-preview">
             <span class="form-link-text">
                 <i class="fas fa-link"></i> 
@@ -552,32 +558,32 @@
         </div>
     </div>
 
-    <!-- معلومات اتصال موسعة: بريد، تيليجرام، يوتيوب -->
+    <!-- معلومات التواصل (مسافات محسّنة) -->
     <div class="contact-info-panel">
         <div class="contact-item">
             <i class="fas fa-envelope-open-text"></i>
             <div>
-                <div style="font-size: 16px; opacity:0.9;">البريد الإلكتروني</div>
+                <div style="font-size: 15px; opacity:0.85; margin-bottom:4px;">البريد الإلكتروني</div>
                 <a href="mailto:ocscapitale@gmail.com">ocscapitale@gmail.com</a>
             </div>
         </div>
         <div class="contact-item">
             <i class="fab fa-telegram-plane"></i>
             <div>
-                <div style="font-size: 16px; opacity:0.9;">تيليجرام للدعم</div>
+                <div style="font-size: 15px; opacity:0.85; margin-bottom:4px;">تيليجرام للدعم</div>
                 <a href="https://t.me/ocscapitale" target="_blank" class="telegram-username">@ocscapitale</a>
             </div>
         </div>
         <div class="contact-item">
             <i class="fab fa-youtube"></i>
             <div>
-                <div style="font-size: 16px; opacity:0.9;">قناة اليوتيوب</div>
+                <div style="font-size: 15px; opacity:0.85; margin-bottom:4px;">قناة اليوتيوب</div>
                 <a href="https://youtube.com/@xrpgen?si=WGVCRKAVkIEZ_jxc" target="_blank" class="youtube-username">@xrpgen</a>
             </div>
         </div>
     </div>
 
-    <!-- نسبة الأرباح وتوضيح مهم -->
+    <!-- نسبة الأرباح -->
     <div class="fee-note">
         <i class="fas fa-percent"></i> 
         <strong>نسبة الأرباح :</strong> نأخذ فقط 15% - 20% من الأرباح المحققة (حسب حجم الحساب). 
@@ -594,7 +600,6 @@
         </span>
     </div>
     
-    <!-- شريط صغير أسفل الزر للوصول السريع -->
     <div style="text-align: center; margin-top: 20px;">
         <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" style="background: transparent; border:2px solid #0a2c7c; color:#0a2c7c; padding: 12px 30px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block;">
             <i class="fas fa-arrow-right"></i> رابط الاستبيان المباشر (اضغط هنا) 
@@ -603,7 +608,6 @@
     </div>
     <br>
 </div>
-<!-- تذييل خارجي -->
 <div style="text-align: center; margin-top: 12px; color: #3e5d8a; font-size: 14px; font-weight: 500;">
     <i class="fas fa-robot"></i> OCS Capital – نضع الذكاء الاصطناعي في خدمة استثمارك
 </div>
