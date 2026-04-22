@@ -2,18 +2,617 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCS Capital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>OCS Capital | تداول آلي بالذكاء الاصطناعي</title>
+    <!-- Google Fonts: Cairo for elegant Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(145deg, #f8faff 0%, #eef2fc 100%);
+            color: #1a1f36;
+            line-height: 1.7;
+            padding: 20px 16px 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 20, 60, 0.25);
+            padding: 32px 28px 20px;
+            border: 1px solid rgba(22, 82, 240, 0.08);
+        }
+
+        /* Header & Brand */
+        .brand-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-bottom: 1.5px solid rgba(5, 70, 180, 0.1);
+            padding-bottom: 18px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: #0a2c7c;
+            color: #ffd966;
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            box-shadow: 0 8px 14px -6px rgba(10, 44, 124, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #0a2540;
+        }
+
+        .logo-text span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #3c5a9c;
+            display: block;
+            margin-top: -4px;
+        }
+
+        .contact-badge {
+            background: #ffffffd6;
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            border: 1px solid #cddfff;
+        }
+
+        .contact-badge i {
+            color: #1e5bd7;
+            margin-left: 6px;
+        }
+
+        /* Hero CTA & description */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 24px 0 32px;
+        }
+
+        .pill-badge {
+            background: #e6edff;
+            color: #0a2c7c;
+            padding: 8px 22px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #b9d0ff;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.3;
+            max-width: 850px;
+            color: #071b3b;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 i {
+            color: #f5b342;
+            margin: 0 6px;
+        }
+
+        .hero .highlight {
+            background: linear-gradient(120deg, #ffe8b5 0%, #ffe8b5 60%);
+            padding: 0 12px;
+            display: inline-block;
+            border-radius: 30px;
+            color: #0f3a7a;
+        }
+
+        .hero-description {
+            font-size: 19px;
+            color: #2d3f60;
+            max-width: 700px;
+            margin: 10px auto 30px;
+            font-weight: 500;
+        }
+
+        /* CTA Button الرئيسي */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: #0a2c7c;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 120px;
+            text-decoration: none;
+            box-shadow: 0 20px 30px -8px rgba(10, 44, 124, 0.4);
+            transition: all 0.2s ease;
+            border: 1px solid #6289e0;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+            border: none;
+        }
+
+        .cta-button i {
+            font-size: 28px;
+            color: #ffde7a;
+        }
+
+        .cta-button:hover {
+            background: #1e3f8f;
+            transform: scale(1.02);
+            box-shadow: 0 22px 35px -10px #0a2c7c;
+        }
+
+        .cta-sub {
+            color: #496194;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .cta-sub i {
+            color: #1dab3a;
+        }
+
+        /* مزايا وأيقونات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin: 40px 0 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 24px 18px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 20, 50, 0.04);
+            border: 1px solid #eef3ff;
+            transition: transform 0.15s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #b9d2ff;
+        }
+
+        .feature-icon {
+            background: #ecf2ff;
+            width: 65px;
+            height: 65px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            color: #0a2c7c;
+            font-size: 30px;
+        }
+
+        .feature-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #42526b;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        /* قسم الاستبيان + زر الحجز */
+        .booking-section {
+            background: linear-gradient(102deg, #ffffff 0%, #f3f9ff 100%);
+            border-radius: 40px;
+            padding: 30px 30px 35px;
+            margin: 20px 0 30px;
+            border: 1.5px solid #dbe7ff;
+            box-shadow: inset 0 1px 4px #ffffff, 0 18px 30px -12px rgba(2, 30, 80, 0.1);
+        }
+
+        .booking-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .booking-header i {
+            font-size: 32px;
+            color: #0a2c7c;
+            background: #e1ebff;
+            padding: 12px;
+            border-radius: 20px;
+        }
+
+        .booking-header h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #001b42;
+        }
+
+        .booking-desc {
+            font-size: 18px;
+            margin-bottom: 28px;
+            color: #1f3a60;
+            font-weight: 500;
+        }
+
+        .form-preview {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffffd1;
+            border-radius: 100px;
+            padding: 6px 6px 6px 28px;
+            border: 1px solid #b9d0fb;
+            box-shadow: 0 8px 14px -10px rgba(0,0,0,0.1);
+        }
+
+        .form-link-text {
+            font-size: 16px;
+            color: #1e3a6b;
+            font-weight: 600;
+            word-break: break-all;
+            padding: 8px 0;
+        }
+
+        .form-link-text i {
+            color: #0f6e3f;
+            margin-left: 8px;
+        }
+
+        .reserve-btn-large {
+            background: #0a2c7c;
+            color: white;
+            padding: 16px 38px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 22px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+            box-shadow: 0 12px 18px -8px #0a2c7c;
+            transition: 0.15s;
+            border: 1px solid #6289e0;
+        }
+
+        .reserve-btn-large i {
+            font-size: 24px;
+        }
+
+        .reserve-btn-large:hover {
+            background: #1e4393;
+            box-shadow: 0 14px 22px -10px #0a2c7c;
+        }
+
+        /* قسم معلومات التواصل */
+        .contact-info-panel {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #0b1d3b;
+            padding: 22px 30px;
+            border-radius: 50px;
+            margin: 30px 0 16px;
+            color: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .contact-item i {
+            font-size: 28px;
+            background: #1e3b6e;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            color: #ffd966;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted #7f9fdf;
+        }
+
+        .contact-item a:hover {
+            color: #ffdb7c;
+        }
+
+        .telegram-username {
+            direction: ltr;
+            display: inline-block;
+            unicode-bidi: embed;
+        }
+
+        /* نص الإفصاح / رسوم */
+        .fee-note {
+            text-align: center;
+            margin: 20px 0 10px;
+            color: #3f5270;
+            font-weight: 500;
+            background: #eaf1ff;
+            padding: 12px 18px;
+            border-radius: 60px;
+            font-size: 16px;
+        }
+
+        .fee-note strong {
+            color: #0a2c7c;
+            font-size: 18px;
+        }
+
+        .footer-note {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            color: #3d5779;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 4px;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .container {
+                padding: 22px 16px 16px;
+                border-radius: 32px;
+            }
+            .hero h2 {
+                font-size: 32px;
+            }
+            .cta-button {
+                font-size: 20px;
+                padding: 16px 28px;
+                width: 100%;
+                justify-content: center;
+            }
+            .form-preview {
+                flex-direction: column;
+                background: transparent;
+                border-radius: 28px;
+                padding: 8px;
+                gap: 18px;
+            }
+            .reserve-btn-large {
+                width: 100%;
+                justify-content: center;
+                font-size: 20px;
+            }
+            .contact-info-panel {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+                border-radius: 32px;
+            }
+            .brand-section {
+                flex-direction: column;
+                align-items: start;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 27px;
+            }
+            .feature-card {
+                padding: 18px 10px;
+            }
+        }
+
+        /* utility */
+        .text-gold {
+            color: #e6b422;
+        }
+        i {
+            margin-left: 4px;
+        }
+        .separator {
+            opacity: 0.5;
+        }
+    </style>
 </head>
-<body style="text-align:center; padding:40px; font-family:Arial;">
+<body>
+<div class="container">
+    
+    <!-- الهيدر واسم المؤسسة -->
+    <div class="brand-section">
+        <div class="logo-area">
+            <div class="logo-icon">OCS</div>
+            <div class="logo-text">
+                <h1>OCS Capital</h1>
+                <span>الوسيط الذكي للتداول الآلي</span>
+            </div>
+        </div>
+        <div class="contact-badge">
+            <i class="fas fa-envelope"></i> ocscapitale@gmail.com   |   
+            <i class="fab fa-telegram"></i> @ocscapitale
+        </div>
+    </div>
 
-<h2>OCS Capital</h2>
+    <!-- القسم الرئيسي مع CTA -->
+    <div class="hero">
+        <div class="pill-badge">
+            <i class="fas fa-robot"></i> بوتات ذكاء اصطناعي حصرية · نسبة من الأرباح فقط
+        </div>
+        <h2>
+            تداول بذكاء  <i class="fas fa-chart-line"></i> <br>
+            <span class="highlight">مع بوتات OCS الاحترافية</span>
+        </h2>
+        <div class="hero-description">
+            نتيح لك استخدام بوتاتنا المطوّرة بالذكاء الاصطناعي للتداول الآلي عبر منصتنا. 
+            أنت تتداول ونحن نشاركك نسبة بسيطة <strong>من الأرباح فقط</strong> – لا رسوم خفية.
+        </div>
+        
+        <!-- زر الحجز الرئيسي (رابط الاستبيان) -->
+        <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" class="cta-button">
+            <i class="fas fa-calendar-check"></i> احجز استشارتك الآن
+            <i class="fas fa-arrow-left" style="font-size: 22px;"></i>
+        </a>
+        <div class="cta-sub">
+            <i class="fas fa-check-circle"></i> املأ الاستبيان القصير وسنتواصل معك فوراً
+        </div>
+    </div>
 
-<p>الدعم عبر تيليجرام: @ocscapitale</p>
+    <!-- مميزات رئيسية (خبرة مهنية) -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-brain"></i></div>
+            <h4>ذكاء اصطناعي متطور</h4>
+            <p>بوتاتنا تتعلّم من السوق وتتخذ قرارات لحظية مدعومة بتحليل عميق.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <h4>نسبة من الأرباح فقط</h4>
+            <p>لا تدفع إلا عند تحقيق الأرباح. عمولتنا شفافة وبسيطة.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4>منصة آمنة ومرخصة</h4>
+            <p>حسابات معزولة، تشفير متقدم، وسيولة عالية من شركائنا.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <h4>تداول 24/7 بدون انقطاع</h4>
+            <p>البوتات تعمل على مدار الساعة لاقتناص الفرص في جميع الأسواق.</p>
+        </div>
+    </div>
 
-<a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank">
-اضغط هنا للدخول إلى الاستبيان
-</a>
+    <!-- قسم الاستبيان + زر الحجز المكرر (نسق أفضل) -->
+    <div class="booking-section">
+        <div class="booking-header">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>استبيان العميل – ابدأ رحلتك الاستثمارية</h3>
+        </div>
+        <div class="booking-desc">
+            لنساعدك في اختيار البوت الأنسب وتخصيص حسابك، يرجى تعبئة الاستبيان المختصر. 
+            بعد إرساله سيتواصل معك فريق OCS Capital خلال ساعة عمل.
+        </div>
+        
+        <!-- صندوق عرض الرابط مع زر الحجز البارز -->
+        <div class="form-preview">
+            <span class="form-link-text">
+                <i class="fas fa-link"></i> 
+                https://forms.gle/f8FTbZHTS2SdSbjJ6
+            </span>
+            <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" class="reserve-btn-large">
+                <i class="fas fa-pen-alt"></i> املأ الاستبيان واحجز
+                <i class="fas fa-external-link-alt" style="font-size: 18px;"></i>
+            </a>
+        </div>
+        <div style="margin-top: 22px; text-align: center; color: #1f4973; font-weight: 600;">
+            <i class="fas fa-stopwatch"></i> يستغرق 90 ثانية فقط • رابط آمن Google Forms
+        </div>
+    </div>
 
+    <!-- معلومات اتصال مهمة (بريد + تيليجرام) -->
+    <div class="contact-info-panel">
+        <div class="contact-item">
+            <i class="fas fa-envelope-open-text"></i>
+            <div>
+                <div style="font-size: 16px; opacity:0.9;">البريد الإلكتروني الرسمي</div>
+                <a href="mailto:ocscapitale@gmail.com">ocscapitale@gmail.com</a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-telegram-plane"></i>
+            <div>
+                <div style="font-size: 16px; opacity:0.9;">تيليجرام للدعم المباشر</div>
+                <a href="https://t.me/ocscapitale" target="_blank" class="telegram-username">@ocscapitale</a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-globe"></i>
+            <div>
+                <div style="font-size: 16px; opacity:0.9;">وسيط OCS</div>
+                <span>مرخص · تداول ذكي</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- نسبة الأرباح وتوضيح مهم -->
+    <div class="fee-note">
+        <i class="fas fa-percent"></i> 
+        <strong>نسبة الأرباح :</strong> نأخذ فقط 15% - 20% من الأرباح المحققة (حسب حجم الحساب). 
+        <strong>لا رسوم إدارية · لا رسوم خفية</strong> · الأرباح تحسب شهرياً.
+    </div>
+
+    <!-- فوتر ومعلومات إضافية حسب الخبرة -->
+    <div class="footer-note">
+        <span><i class="far fa-copyright"></i> 2026 OCS Capital. جميع الحقوق محفوظة.</span>
+        <span>
+            <i class="fas fa-headset"></i> الدعم عبر تيليجرام: @ocscapitale  
+            <span style="margin:0 10px">|</span>  
+            <i class="fas fa-file-signature"></i> الاستبيان خطوة أولى نحو التداول الذكي
+        </span>
+    </div>
+    
+    <!-- شريط صغير أسفل الزر للوصول السريع مرة أخرى -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" style="background: transparent; border:2px solid #0a2c7c; color:#0a2c7c; padding: 12px 30px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block;">
+            <i class="fas fa-arrow-right"></i> رابط الاستبيان المباشر (اضغط هنا) 
+            <i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+    <br>
+</div>
+<!-- تذييل خارجي بسيط -->
+<div style="text-align: center; margin-top: 12px; color: #3e5d8a; font-size: 14px; font-weight: 500;">
+    <i class="fas fa-robot"></i> OCS Capital – نضع الذكاء الاصطناعي في خدمة استثمارك
+</div>
 </body>
 </html>
