@@ -71,7 +71,6 @@
             position: relative;
         }
 
-        /* Header */
         .header {
             display: flex;
             align-items: center;
@@ -134,10 +133,9 @@
             color: #fbbf24;
         }
 
-        /* Hero */
         .hero {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .hero-logo {
@@ -158,7 +156,6 @@
             background: linear-gradient(to left, #ffffff, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: none;
         }
 
         .hero .highlight {
@@ -200,6 +197,69 @@
             margin: 0 6px;
         }
 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(251,191,36,0.25);
+            border-radius: 32px;
+            padding: 28px 16px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .stat-box:hover::before {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .stat-box:hover {
+            border-color: #fbbf24;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -10px rgba(251,191,36,0.2);
+        }
+
+        .stat-icon {
+            font-size: 36px;
+            color: #fbbf24;
+            margin-bottom: 12px;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
         .cta-group {
             display: flex;
             flex-wrap: wrap;
@@ -218,7 +278,6 @@
             align-items: center;
             gap: 12px;
             transition: 0.3s;
-            letter-spacing: -0.5px;
         }
 
         .btn-primary {
@@ -247,17 +306,14 @@
         .sub-text {
             color: #94a3b8;
             font-weight: 500;
-            margin: 10px 0 0;
         }
 
-        /* How it works */
         .section-title {
             font-size: 36px;
             font-weight: 900;
             text-align: center;
             margin: 60px 0 30px;
             color: white;
-            position: relative;
         }
 
         .section-title::after {
@@ -306,11 +362,6 @@
             margin-bottom: 12px;
         }
 
-        .step-card p {
-            color: #cbd5e1;
-        }
-
-        /* Features */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -336,20 +387,8 @@
         .feature-item i {
             font-size: 36px;
             color: #60a5fa;
-            margin-bottom: 14px;
         }
 
-        .feature-item h5 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .feature-item p {
-            color: #94a3b8;
-        }
-
-        /* Booking section */
         .booking-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
@@ -362,13 +401,12 @@
         .booking-card h3 {
             font-size: 28px;
             color: white;
-            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .booking-card .form-inline {
+        .form-inline {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
@@ -379,11 +417,6 @@
             padding: 8px 8px 8px 28px;
         }
 
-        .form-link {
-            color: #94a3b8;
-            font-weight: 500;
-        }
-
         .btn-book {
             background: #fbbf24;
             color: #0f172a;
@@ -392,14 +425,6 @@
             font-weight: 800;
             font-size: 20px;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-book:hover {
-            background: #f59e0b;
         }
 
         .contact-panel {
@@ -419,7 +444,6 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            color: #e2e8f0;
             font-weight: 600;
         }
 
@@ -451,37 +475,54 @@
             color: #fbbf24;
         }
 
+        <!-- قسم الموقع الجغرافي -->
+<div style="margin: 30px 0;">
+    <div style="text-align: center; margin-bottom: 16px;">
+        <h3 style="font-size: 28px; font-weight: 800; color: white; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <i class="fas fa-map-marked-alt" style="color:#fbbf24;"></i> موقعنا الجغرافي
+        </h3>
+    </div>
+    
+    <!-- خريطة تفاعلية -->
+    <div style="border-radius: 32px; overflow: hidden; border: 1px solid rgba(251,191,36,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sar!2s!4v1690000000000" 
+            width="100%" 
+            height="300" 
+            style="border:0; display: block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    
+    <!-- زر فتح في خرائط Google -->
+    <div style="text-align: center; margin-top: 16px;">
+        <a href="https://maps.app.goo.gl/eBr4tuWoo9J6eJhG8" target="_blank" style="background: rgba(255,255,255,0.05); color: #fbbf24; padding: 12px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(251,191,36,0.4); transition: 0.3s;">
+            <i class="fas fa-external-link-alt"></i> فتح في خرائط Google
+        </a>
+    </div>
+</div>
+
         footer {
             text-align: center;
             color: #64748b;
             padding: 20px 0;
-            font-size: 14px;
             border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 40px;
         }
 
         @media (max-width: 700px) {
-            .hero h2 {
-                font-size: 34px;
-            }
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .btn-primary, .btn-gold {
-                width: 100%;
-                justify-content: center;
-            }
-            .contact-panel {
-                flex-direction: column;
-            }
+            .hero h2 { font-size: 34px; }
+            .header { flex-direction: column; }
+            .btn-primary, .btn-gold { width: 100%; justify-content: center; }
+            .contact-panel { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 <div class="bg-animation"></div>
 <div class="container">
-    <!-- Header -->
     <div class="header">
         <div class="logo-area">
             <img src="https://raw.githubusercontent.com/ocscapitale-design/ocscapitale/refs/heads/main/1776884621819.jpg" alt="OCS Capital" class="logo-img">
@@ -496,7 +537,6 @@
         </div>
     </div>
 
-    <!-- Hero -->
     <div class="hero">
         <img src="https://raw.githubusercontent.com/ocscapitale-design/ocscapitale/refs/heads/main/1776884621819.jpg" alt="OCS" class="hero-logo">
         <div class="highlight"><i class="fas fa-robot"></i> بوتات ذكاء اصطناعي حصرية</div>
@@ -508,6 +548,30 @@
             <i class="fas fa-rocket"></i> اكتشف القوة القصوى للذكاء الاصطناعي في عالم التداول! 🚀<br>
             بوتاتنا لا تنام، بل تعمل على مدار الساعة بخوارزميات ذكية تقتنص أدق الفرص في السوق. سواء كان الاتجاه صعوداً أو هبوطاً، خوارزمياتنا تحلل البيانات الضخمة في أجزاء من الثانية لتتخذ القرار الصحيح بالنيابة عنك. حوّل استراتيجيتك إلى واقع رقمي رابح.
         </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                <div class="stat-number">1,421</div>
+                <div class="stat-label">زيارة العملاء</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                <div class="stat-number">236</div>
+                <div class="stat-label">عميل نشط</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-robot"></i></div>
+                <div class="stat-number">12+</div>
+                <div class="stat-label">نظام تداول آلي</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                <div class="stat-number">$2.8M</div>
+                <div class="stat-label">أرباح محققة</div>
+            </div>
+        </div>
+
         <div class="cta-group">
             <a href="https://forms.gle/f8FTbZHTS2SdSbjJ6" target="_blank" class="btn-primary">
                 <i class="fas fa-calendar-check"></i> احجز استشارتك
@@ -519,7 +583,6 @@
         <p class="sub-text"><i class="fas fa-clock"></i> املأ الاستبيان أو تحدث مع المختص مباشرة</p>
     </div>
 
-    <!-- كيف تربح؟ -->
     <div class="section-title">🚀 كيف تربح مع OCS؟</div>
     <div class="steps">
         <div class="step-card">
@@ -539,7 +602,6 @@
         </div>
     </div>
 
-    <!-- مميزات -->
     <div class="section-title">⚡ لماذا تختار OCS؟</div>
     <div class="features">
         <div class="feature-item">
@@ -564,7 +626,6 @@
         </div>
     </div>
 
-    <!-- استبيان -->
     <div class="booking-card">
         <h3><i class="fas fa-clipboard-list" style="color:#fbbf24;"></i> استبيان العميل – ابدأ رحلتك</h3>
         <p style="margin-bottom: 20px; color: #cbd5e1;">لنساعدك في اختيار البوت الأنسب، املأ الاستبيان المختصر.</p>
@@ -577,7 +638,6 @@
         <p style="text-align:center; margin-top:16px;"><i class="fas fa-stopwatch"></i> يستغرق 90 ثانية فقط</p>
     </div>
 
-    <!-- تواصل -->
     <div class="contact-panel">
         <div class="contact-item">
             <i class="fas fa-envelope-open-text"></i>
@@ -598,6 +658,13 @@
             <div>
                 <div>قناة اليوتيوب</div>
                 <a href="https://youtube.com/@xrpgen?si=WGVCRKAVkIEZ_jxc" target="_blank">@xrpgen</a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <div>موقعنا الجغرافي</div>
+                <a href="https://maps.app.goo.gl/eBr4tuWoo9J6eJhG8" target="_blank">عرض الموقع</a>
             </div>
         </div>
     </div>
