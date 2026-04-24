@@ -133,7 +133,6 @@
             color: #fbbf24;
         }
 
-        /* حذفنا البريد من الهيدر */
         .hero {
             text-align: center;
             margin-bottom: 20px;
@@ -367,6 +366,72 @@
             margin-bottom: 12px;
         }
 
+        /* قسم اليوتيوب الترويجي */
+        .youtube-promo {
+            background: linear-gradient(135deg, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0.02) 100%);
+            border: 1px solid rgba(255,0,0,0.3);
+            border-radius: 40px;
+            padding: 40px 30px;
+            margin: 30px 0;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: 0.3s;
+        }
+
+        .youtube-promo:hover {
+            border-color: #ff0000;
+            box-shadow: 0 0 30px rgba(255,0,0,0.2);
+        }
+
+        .youtube-icon {
+            font-size: 64px;
+            color: #ff0000;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        .youtube-promo h3 {
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .youtube-promo p {
+            font-size: 20px;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .btn-youtube {
+            background: #ff0000;
+            color: white;
+            padding: 18px 48px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.4);
+        }
+
+        .btn-youtube:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.6);
+        }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -394,7 +459,6 @@
             color: #60a5fa;
         }
 
-        /* توحيد أزرار التيليجرام */
         .telegram-section {
             background: rgba(255,255,255,0.03);
             backdrop-filter: blur(12px);
@@ -503,7 +567,7 @@
         @media (max-width: 700px) {
             .hero h2 { font-size: 34px; }
             .header { flex-direction: column; }
-            .btn-primary, .btn-gold { width: 100%; justify-content: center; }
+            .btn-primary, .btn-gold, .btn-youtube { width: 100%; justify-content: center; }
             .contact-panel { flex-direction: column; }
             .btn-telegram { width: 100%; justify-content: center; }
         }
@@ -521,7 +585,6 @@
             </div>
         </div>
         <div class="header-contacts">
-            <!-- تم حذف البريد من هنا -->
             <a href="https://t.me/ocscapitale" target="_blank"><i class="fab fa-telegram"></i> @ocscapitale</a>
         </div>
     </div>
@@ -591,6 +654,19 @@
         </div>
     </div>
 
+    <!-- قسم اليوتيوب الترويجي المضاف -->
+    <div class="youtube-promo">
+        <div class="youtube-icon">
+            <i class="fab fa-youtube"></i>
+        </div>
+        <h3>شاهد فريقنا وهو ينفذ الصفقات الحية</h3>
+        <p>يمكنكم مشاهدة ومتابعة قناتنا على اليوتيوب وتنفيذ الصفقات مباشرة، وتعلم استراتيجيات لم تكن تعرفها من قبل. انضم إلى آلاف المشتركين الذين يثقون بـ OCS Capital.</p>
+        <a href="https://youtube.com/@xrpgen?si=WGVCRKAVkIEZ_jxc" target="_blank" class="btn-youtube">
+            <i class="fab fa-youtube"></i> اشترك الآن وتابع الصفقات
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
     <div class="section-title">⚡ لماذا تختار OCS؟</div>
     <div class="features">
         <div class="feature-item">
@@ -637,7 +713,7 @@
         </div>
     </div>
 
-    <!-- لوحة التواصل (البريد، يوتيوب، الموقع) -->
+    <!-- لوحة التواصل -->
     <div class="contact-panel">
         <div class="contact-item">
             <i class="fas fa-envelope-open-text"></i>
