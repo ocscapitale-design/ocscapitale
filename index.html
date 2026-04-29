@@ -1,9 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>OCS Capital | تداول آلي بالذكاء الاصطناعي</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -366,7 +369,6 @@
             margin-bottom: 12px;
         }
 
-        /* قسم اليوتيوب الترويجي */
         .youtube-promo {
             background: linear-gradient(135deg, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0.02) 100%);
             border: 1px solid rgba(255,0,0,0.3);
@@ -759,5 +761,18 @@
         <p>© 2026 OCS Capital. جميع الحقوق محفوظة. | الدعم: @ocscapitale</p>
     </footer>
 </div>
+<!-- تفعيل Service Worker -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(function(reg) {
+      console.log("Service Worker جاهز!");
+    })
+    .catch(function(err) {
+      console.log("خطأ: ", err);
+    });
+}
+</script>
 </body>
 </html>
+```
